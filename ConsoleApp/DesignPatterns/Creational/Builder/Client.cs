@@ -20,17 +20,19 @@ namespace ConsoleApp.DesignPatterns.Creational.Builder
 
             //var vehicle = vehicleBuilder.Build();
 
-           
 
-            var vehicle = new VehicleBuilder()
+
+            vehicleBuilder = new VehicleBuilder()
             .SetWeels(4)
             .SetSeats(5)
             .SetDoors(4)
             .SetTrunkCapacity(500)
-            .SetEnginePower(100)
-            .Build();
+            .SetEnginePower(100);
 
+            var vehicle = vehicleBuilder.Build();
+            Console.WriteLine(vehicle);
 
+            vehicle = vehicleBuilder.SetEnginePower(150).Build();
             Console.WriteLine(vehicle);
         }
     }

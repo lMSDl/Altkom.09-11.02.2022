@@ -7,8 +7,10 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Rectangle rectangle = new Square();
-            ShowArea(rectangle, 3, 5);
+            DesignPatterns.Creational.Prototype.Client.Execute();
+
+            //Rectangle rectangle = new Square();
+            //ShowArea(rectangle, 3, 5);
 
         }
 
