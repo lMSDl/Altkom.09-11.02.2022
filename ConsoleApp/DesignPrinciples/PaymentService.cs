@@ -13,18 +13,7 @@ namespace ConsoleApp.DesignPrinciples
         public bool Charge(int customerId, float amount)
         {
             var customer = GetCustomerById(customerId);
-            if (customer == null)
-            {
-                return false;
-            }
-
-            if (GetBalance(customerId) + customer.AllowedDebit < amount)
-            {
-                return false;
-            }
-
-            customer.Outcomes += amount;
-            return true;
+            return customer?.Charge(amount) ?? false;
         }
 
         private Customer GetCustomerById(int customerId)
@@ -35,18 +24,7 @@ namespace ConsoleApp.DesignPrinciples
         public void Fund(int customerId, float amount)
         {
             var customer = GetCustomerById(customerId);
-            if (customer == null)
-            {
-                return;
-            }
-
-            customer.Incomes += amount;
-        }
-
-        public float? GetBalance(int customerId)
-        {
-            var customer = GetCustomerById(customerId);
-            return customer?.Incomes - customer?.Outcomes;
+            customer?.Fund(amount);
         }
     }
 }
