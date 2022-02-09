@@ -10,16 +10,6 @@ namespace ConsoleApp.DesignPrinciples
     {
         private ICollection<Customer> Customers { get; } = new List<Customer> { new Customer(1), new Customer(2), new Customer(3), new Customer(4), new Customer(5) };
 
-        public bool DeleteCustomer(Customer customer)
-        {
-            return Customers.Remove(customer);
-        }
-
-        public Customer FindCustomerbyAllowedDebit(float allowedDebit)
-        {
-            return Customers.SingleOrDefault(x => x.AllowedDebit == allowedDebit);
-        }
-
         public bool Charge(int customerId, float amount)
         {
             var customer = GetCustomerById(customerId);

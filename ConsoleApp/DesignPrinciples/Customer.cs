@@ -18,8 +18,6 @@ namespace ConsoleApp.DesignPrinciples
         public float Incomes { get; set; }
         public float Outcomes { get; set; }
         public float AllowedDebit { get; set; }
-        public bool HasDebit => Incomes - Outcomes < 0;
     }
-
     
 }
