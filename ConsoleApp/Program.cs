@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            DesignPatterns.Creational.FactoryMethod.Client.Execute();
+            DesignPatterns.Creational.Singleton.Client.Execute();
 
             //Rectangle rectangle = new Square();
             //ShowArea(rectangle, 3, 5);

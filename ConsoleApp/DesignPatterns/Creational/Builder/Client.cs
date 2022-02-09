@@ -34,6 +34,9 @@ namespace ConsoleApp.DesignPatterns.Creational.Builder
 
             vehicle = vehicleBuilder.SetEnginePower(150).Build();
             Console.WriteLine(vehicle);
+
+            vehicle = new Vehicle { Wheels = 4, Seats = 4, EnginePower = 150 };
+            Console.WriteLine(vehicle);
         }
     }
 }
