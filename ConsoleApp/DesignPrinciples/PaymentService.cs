@@ -18,14 +18,26 @@ namespace ConsoleApp.DesignPrinciples
         public bool Charge(int customerId, float amount)
         {
             var customer = _service.GetCustomerById(customerId);
-            return customer?.PaymentAccount.Charge(amount) ?? false;
+            if (customer == null)
+                return false;
+            return Charge(customer.PaymentAccount, amount);
         }
-
 
         public void Fund(int customerId, float amount)
         {
             var customer = _service.GetCustomerById(customerId);
-            customer?.PaymentAccount.Fund(amount);
+            if (customer != null)
+                Fund(customer.PaymentAccount, amount);
+        }
+
+        public bool Charge(PaymentAccount paymentAccount, float amount)
+        {
+            return paymentAccount.Charge(amount);
+        }
+
+        public void Fund(PaymentAccount paymentAccount, float amount)
+        {
+            paymentAccount.Fund(amount);
         }
     }
 }
