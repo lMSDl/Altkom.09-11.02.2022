@@ -22,13 +22,13 @@ namespace ConsoleApp.DesignPrinciples
 
         public bool Charge(int customerId, float amount)
         {
-            var customer = Customers.SingleOrDefault(x => x.Id == customerId);
+            var customer = GetCustomerById(customerId);
             if (customer == null)
             {
                 return false;
             }
 
-            if (customer.Incomes - customer.Outcomes + customer.AllowedDebit < amount)
+            if (GetBalance(customerId) + customer.AllowedDebit < amount)
             {
                 return false;
             }
@@ -37,9 +37,14 @@ namespace ConsoleApp.DesignPrinciples
             return true;
         }
 
+        private Customer GetCustomerById(int customerId)
+        {
+            return Customers.SingleOrDefault(x => x.Id == customerId);
+        }
+
         public void Fund(int customerId, float amount)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
+            var customer = GetCustomerById(customerId);
             if (customer == null)
             {
                 return;
@@ -50,7 +55,7 @@ namespace ConsoleApp.DesignPrinciples
 
         public float? GetBalance(int customerId)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
+            var customer = GetCustomerById(customerId);
             return customer?.Incomes - customer?.Outcomes;
         }
     }
