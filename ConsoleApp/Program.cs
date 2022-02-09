@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp.SOLID.L2;
+using System;
 
 namespace ConsoleApp
 {
@@ -6,7 +7,16 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Rectangle rectangle = new Square();
+            ShowArea(rectangle, 3, 5);
+
+        }
+
+        static void ShowArea(Rectangle rectangle, int a, int b)
+        {
+            rectangle.A = a;
+            rectangle.B = b;
+            Console.WriteLine($"Pole prostokąta o bokach {a} i {b} jest równe {rectangle.Area}");
         }
     }
 }
