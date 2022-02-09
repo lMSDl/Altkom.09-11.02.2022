@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp.DesignPatterns.Creational
+namespace ConsoleApp.DesignPatterns.Creational.Builder
 {
     public class Vehicle
     {
