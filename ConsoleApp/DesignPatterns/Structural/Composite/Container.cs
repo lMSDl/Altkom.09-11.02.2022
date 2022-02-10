@@ -22,7 +22,7 @@ namespace ConsoleApp.DesignPatterns.Structural.Composite
             return sum;
         }
 
-        public void Add(Item item)
+        public virtual void Add(Item item)
         {
             _content.Add(item);
         }

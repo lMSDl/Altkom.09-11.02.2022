@@ -10,7 +10,7 @@ namespace ConsoleApp.DesignPatterns.Structural.Composite
     {
         public static void Execute()
         {
-            var storage = new Container("Storage 1");
+            var storage = new Storage("Storage 1");
             var shelf1 = new Container("Shelf 1");
             var shelf2 = new Container("Shelf 2");
             var box1 = new Container("Box 1");
@@ -58,7 +58,7 @@ namespace ConsoleApp.DesignPatterns.Structural.Composite
                 box5.Add((Item)product3.Clone());
             }
 
-            storage.Add((Item)product3.Clone());
+            //storage.Add((Item)product3.Clone());
 
             storage.GetPrice();
 
