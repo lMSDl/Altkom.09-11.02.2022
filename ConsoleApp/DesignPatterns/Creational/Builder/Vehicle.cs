@@ -45,6 +45,10 @@ namespace ConsoleApp.DesignPatterns.Creational.Builder
         public int? TrunkCapacity { get; set; }
         public int? EnginePower { get; set; }
 
+        public string Manufacturer { get; set; }
+        public DateTime YearOfProduction { get; set; }
+        public string ModelName { get; set; }
+
         public object Clone()
         {
             return MemberwiseClone();

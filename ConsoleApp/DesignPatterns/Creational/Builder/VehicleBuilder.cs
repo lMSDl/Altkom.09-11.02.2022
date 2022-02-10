@@ -6,43 +6,51 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.DesignPatterns.Creational.Builder
 {
-    public class VehicleBuilder
+    public class VehicleBuilder : VehicleBuilderFacade
     {
-        private Vehicle _vehicle = new Vehicle();
+
+
+        public VehicleBuilder(Vehicle vehicle) : base(vehicle)
+        {
+        }
+
+        public VehicleBuilder()
+        {
+        }
 
         public VehicleBuilder SetWeels(int wheels)
         {
-            _vehicle.Wheels = wheels;
+            vehicle.Wheels = wheels;
             return this;
         }
 
         public VehicleBuilder SetDoors(int doors)
         {
-            _vehicle.Doors = doors;
+            vehicle.Doors = doors;
             return this;
         }
 
         public VehicleBuilder SetEnginePower(int power)
         {
-            _vehicle.EnginePower = power;
+            vehicle.EnginePower = power;
             return this;
         }
 
         public VehicleBuilder SetTrunkCapacity(int capacity)
         {
-            _vehicle.TrunkCapacity = capacity;
+            vehicle.TrunkCapacity = capacity;
             return this;
         }
 
         public VehicleBuilder SetSeats(int seats)
         {
-            _vehicle.Seats = seats;
+            vehicle.Seats = seats;
             return this;
         }
 
         public Vehicle Build()
         {
-            return (Vehicle)_vehicle.Clone();
+            return (Vehicle)vehicle.Clone();
         }
     }
 }
