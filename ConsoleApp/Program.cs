@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            DesignPatterns.Behavioral.ChainOfResponsibility.I.Client.Execute();
+            DesignPatterns.Behavioral.ChainOfResponsibility.II.Client.Execute();
 
             //Rectangle rectangle = new Square();
             //ShowArea(rectangle, 3, 5);
