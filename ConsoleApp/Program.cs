@@ -7,7 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            DesignPatterns.Behavioral.TemplateMethod.Client.Execute();
+            DesignPatterns.Behavioral.Visitor.II.Client.Execute();
 
             //Rectangle rectangle = new Square();
             //ShowArea(rectangle, 3, 5);
